@@ -15,10 +15,10 @@ class WebTasks(TaskSet):
         #item_id = category_item["id"]
 
         #self.client.get("/")
-        self.client.get("/login", headers={"Authorization":"Basic dXNlcjpwYXNzd29yZA=="})#"Basic %s" % base64string})
+        #self.client.get("/login", headers={"Authorization":"Basic dXNlcjpwYXNzd29yZA=="})#"Basic %s" % base64string})
         self.client.get("/customers")
-        self.client.get("/cards")
-        self.client.get("/addresses")
+        #self.client.get("/cards")
+        #self.client.get("/addresses")
         #self.client.delete("/cart")
         #self.client.post("/cart", json={"id": item_id, "quantity": 1})
         #self.client.get("/basket.html")
