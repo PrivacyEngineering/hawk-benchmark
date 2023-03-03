@@ -1,0 +1,23 @@
+#StartTime,ActualDuration,Labels,NumThreads,ActualQPS,p50,p90,p99,p999,cpu_mili_avg_istio_proxy_fortioclient,cpu_mili_avg_istio_proxy_fortioserver,cpu_mili_avg_istio_proxy_istio-ingressgateway,mem_Mi_avg_istio_proxy_fortioclient,mem_Mi_avg_istio_proxy_fortioserver,mem_Mi_avg_istio_proxy_istio-ingressgateway
+ 2023-03-02T23:01:40.104561995Z,240,nighthawk_555a73c0_qps_1000_c_16_1024_v2-stats-wasm_both,16,1000,1275,1511,1882,2639,0,0,0,0,0,0
+ 2023-03-02T22:57:33.805526412Z,240,nighthawk_555a73c0_qps_4000_c_8_1024_v2-stats-wasm_both,8,4000,1356,1832,2479,3225,0,0,0,0,0,0
+ 2023-03-02T23:22:13.371250797Z,240,nighthawk_555a73c0_qps_4000_c_64_1024_v2-stats-wasm_both,64,4000,1500,2297,3708,5946,0,0,0,0,0,0
+ 2023-03-02T22:53:27.249344791Z,240,nighthawk_555a73c0_qps_1000_c_8_1024_v2-stats-wasm_both,8,1000,1020,1266,1495,2344,0,0,0,0,0,0
+ 2023-03-02T23:14:00.488512245Z,240,nighthawk_555a73c0_qps_4000_c_32_1024_v2-stats-wasm_both,32,4000,1503,2435,4280,6251,0,0,0,0,0,0
+ 2023-03-02T22:40:06.049108210Z,240,nighthawk_555a73c0_qps_1000_c_4_1024_v2-stats-wasm_both,4,1000,1101,1308,1546,2242,0,0,0,0,0,0
+ 2023-03-02T23:09:54.235762965Z,240,nighthawk_555a73c0_qps_1000_c_32_1024_v2-stats-wasm_both,32,1000,1042,1297,1576,2395,0,0,0,0,0,0
+ 2023-03-02T22:35:59.054079773Z,240,nighthawk_555a73c0_qps_4000_c_2_1024_v2-stats-wasm_both,2,1655,1157,1405,1683,2197,0,0,0,0,0,0
+ 2023-03-02T22:31:52.416659591Z,240,nighthawk_555a73c0_qps_1000_c_2_1024_v2-stats-wasm_both,2,1000,1109,1456,1742,2398,0,0,0,0,0,0
+ 2023-03-02T23:05:47.688938297Z,240,nighthawk_555a73c0_qps_4000_c_16_1024_v2-stats-wasm_both,16,4000,1562,2407,3801,5094,0,0,0,0,0,0
+ 2023-03-02T23:18:06.835631883Z,240,nighthawk_555a73c0_qps_1000_c_64_1024_v2-stats-wasm_both,64,1000,1092,1349,1596,2522,0,0,0,0,0,0
+ 2023-03-02T22:44:12.751924633Z,240,nighthawk_555a73c0_qps_4000_c_4_1024_v2-stats-wasm_both,4,2742,1330,1707,2126,2698,0,0,0,0,0,0
+
+
+#plotter command: python3 ./graph_plotter.py --graph_type=latency-p50 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=2,4,8,16,32,64 --query_str=ActualQPS==1000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p90 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=2,4,8,16,32,64 --query_str=ActualQPS==1000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p99 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=2,4,8,16,32,64 --query_str=ActualQPS==1000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p999 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=2,4,8,16,32,64 --query_str=ActualQPS==1000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p50 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=8,16,32,64 --query_str=ActualQPS==4000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p90 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=8,16,32,64 --query_str=ActualQPS==4000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# python3 ./graph_plotter.py --graph_type=latency-p99 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=8,16,32,64 --query_str=ActualQPS==4000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
+# 1.pngpython3 ./graph_plotter.py --graph_type=latency-p999 --x_axis=conn --telemetry_modes=v2-stats-wasm_both --query_list=8,16,32,64 --query_str=ActualQPS==4000 --csv_filepath=./example_plot/1.csv --graph_title=./example_plot/1.png
