@@ -17,8 +17,8 @@ Our cluster runs on the Google Kubernetes Engine and has the following settings:
 
 •	Machine type: n1-standard-8
 
-#Istio 
+# Istio 
 
-version: 1.17.0 
+version: 1.18-alpha
 
-profile: demo
+profile: default
