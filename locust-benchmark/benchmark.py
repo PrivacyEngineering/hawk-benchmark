@@ -3,12 +3,12 @@ import time
 import os
 import pandas as pd
 import json
-totalRuns=3
+totalRuns=4
 endpoint = "prometheus.istio-system.svc.cluster.local:9090/api/v1/query?query="
 total_requests_query = f"{endpoint}sum(istio_requests_total{{namespace=~'sock-shop|hawk-ns'}})[1h:1s]"
 total_requests_collector_query = f"{endpoint}sum(istio_requests_total{{namespace=~'sock-shop|hawk-ns',destination_service_name='collector'}})[1h:1s]"
 latency_ms_collector_query = f"{endpoint}(sum(increase(istio_request_duration_milliseconds_sum{{destination_app='collector'}}[1h]))/sum(increase(istio_request_duration_milliseconds_count{{destination_app='collector'}}[1h])))[1h:1s]"
-
+num_user = [1,10,50,100]
 def get_prometheus_query(r,download_filename,first,last,query)->pd.Series:
     filename = f"testresults/{r}_{download_filename}"
     os.system(f'curl -o {filename} -g "{query}"')
@@ -19,7 +19,7 @@ def get_prometheus_query(r,download_filename,first,last,query)->pd.Series:
 
 for r in range(totalRuns):
     print(f"Run: {r}/{totalRuns}")
-    os.system(f"locust --csv=testresults/{r}")
+    os.system(f"locust -u {num_user[r]}--csv=testresults/{r}")
     hist_df = pd.read_csv(f"testresults/{r}_stats_history.csv")
     first = int(hist_df["Timestamp"].head(1).values[0])
     last = int(hist_df["Timestamp"].tail(1).values[0])
